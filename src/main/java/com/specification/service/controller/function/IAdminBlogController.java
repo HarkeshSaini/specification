@@ -24,9 +24,7 @@ public interface IAdminBlogController {
     Mono<ResponseEntity<APIResponse<BlogDetailResponse>>> getById(@PathVariable String id);
 
     @GetMapping
-    Mono<ResponseEntity<APIResponse<PageResponse<BlogSummaryResponse>>>> list(
-            @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size);
+    Mono<ResponseEntity<APIResponse<PageResponse<BlogSummaryResponse>>>> list(@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "10") int size);
 
     @DeleteMapping("/{id}")
     Mono<ResponseEntity<APIResponse<Void>>> delete(@PathVariable String id);
